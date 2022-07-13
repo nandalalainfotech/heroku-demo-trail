@@ -6,8 +6,10 @@
     "start": "node server.js",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test",
-    "heroku-postbuild": "ng build --prod"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "heroku-postbuild": "ng build && npm install",
+    "dev": "set NODE_ENV=dev&&nodemon",
+    "prod": "set NODE_ENV=prod&&nodemon"
   },
   "private": true,
   "dependencies": {
@@ -22,6 +24,7 @@
     "@angular/platform-browser-dynamic": "~13.2.0",
     "@angular/router": "~13.2.0",
     "express": "^4.18.1",
+    "nodemon": "^2.0.12",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
     "typescript": "~4.5.2",
